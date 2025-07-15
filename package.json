@@ -1,0 +1,24 @@
+{
+  "name": "susan-huang",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hi-Susan/susan-huang.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hi-Susan/susan-huang/issues"
+  },
+  "homepage": "https://github.com/Hi-Susan/susan-huang#readme",
+  "description": "",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.11",
+    "tailwindcss": "^4.1.11"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "title": "前端技術",
+      "items": ["CSS","JavaScript (ES6+)","Vue.js","Nuxt.js","jQuery","D3.js" ]
+    },
+    {
+      "title": "後端整合",
+      "items": ["熟悉 PHP Laravel 架構，具備 Blade 模板開發與資料處理經驗，可獨立完成前後端資料串接與頁面動態呈現" ]
+    },
+    {
+      "title": "樣式框架",
+      "items": ["SCSS / SASS", "Tailwind CSS", "Bootstrap", "Quasar Framework" ]
+    },
+    {
+      "title": "開發工具",
+      "items": ["Webpack", "Vite", "Git", "Hugo"]
+    },
+    {
+      "title": "設計工具",
+      "items": ["Figma", "Photoshop", "Illustrator"]
+    }
+  ]
+}

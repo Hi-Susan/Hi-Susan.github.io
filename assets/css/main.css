@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@theme {
+  --font-serif: "Noto Serif TC", sans-serif; 
+}
+
+@layer base {
+  html {
+    font-family: 'Noto Sans TC', sans-serif;
+    scroll-behavior: smooth;
+  }
+}
