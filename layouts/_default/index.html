@@ -3,7 +3,7 @@
     <img src="/images/about.png" alt="About Susan Huang" class="hidden sm:block mx-auto w-[80%] max-w-[400px] lg:max-w-1/4 xl:max-w-[500px] xl:w-full">
     <div class="w-full">
       <div class="flex items-center justify-between flex-col sm:flex-row">
-        <h2 class="text-xl sm:text-3xl pb-8 sm:pb-0 font-serif">
+        <h2 class="text-2xl sm:text-3xl pb-8 sm:pb-0">
           <span class="block pb-4">設計與程式兼具的整合者</span>
           <span class="pl-10 sm:pl-20 block">讓專案從規劃就少走彎路</span>
         </h2>
@@ -24,7 +24,7 @@
   <div id="horizontal-scroll-wrapper" class="relative">
     <div id="horizontal-scroll" class="md:sticky md:top-0 md:h-100vh md:overflow-hidden">
       <div class="w-[1280px] max-w-full mx-auto px-4">
-        <h2 class="text-2xl sm:text-3xl pb-8 font-serif md:pb-24">職涯歷程與成長</h2>
+        <h2 class="text-2xl sm:text-3xl pb-8 md:pb-24">職涯歷程與成長</h2>
         <div id="scroll-content" class="flex flex-col md:flex-row pb-8 md:pb-24 gap-4 flex-nowrap ease-in-out duration-300 w-full md:w-max">
           {{ range .Site.Data.experience.work }}
           <div class="mb-8 md:mb-0">
@@ -33,7 +33,7 @@
               <div class="w-full h-[1px] bg-[#B9AC97]"></div>
             </div>
             <div class="md:px-8 w-full md:w-[700px]">
-              <div class="bg-white rounded-lg p-8 mt-10">
+              <div class="bg-white rounded-lg p-4 md:p-8 mt-10">
                 <div class="flex flex-col md:flex-row md:items-center gap-8 mb-8">
                   <div>
                     <img src="{{.image}}" alt="logo" class="w-auto" >
@@ -62,7 +62,7 @@
     </div>
   </div>
   <div class="w-[1280px] max-w-full mx-auto px-4">
-    <h2 class="text-2xl sm:text-3xl pb-8 font-serif">我的技術棧</h2>
+    <h2 class="text-2xl sm:text-3xl pb-8">我的技術棧</h2>
     <div>
       {{ range .Site.Data.techStack.list }}
       <div class="mb-4">
@@ -77,7 +77,7 @@
     </div>
   </div>
   <div id="projects" class="w-[1280px] max-w-full mx-auto px-4 pt-12 md:pt-32">
-    <h2 class="text-2xl sm:text-3xl pb-12 font-serif">特色專案介紹</h2>
+    <h2 class="text-2xl sm:text-3xl pb-12">特色專案介紹</h2>
     {{ range .Site.Data.projects.list }}
     <div class="flex lg:flex-row flex-col gap-8 xl:gap-24 mb-20 items-start">
       <img class="w-full md:w-1/2 mx-auto" src="{{.image}}" >
