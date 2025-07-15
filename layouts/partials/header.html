@@ -1,0 +1,17 @@
+<header class="fixed top-0 left-0 w-full shadow-header z-50 bg-[#EEEBE5]">
+  <div class="w-[1280px] max-w-full flex justify-between items-center mx-auto px-4">
+    <h1 class="px-4 text-xl">Susan Huang</h1>
+    <nav class="block">
+      <ul class="flex">
+        {{ range .Site.Data.nav.header }}
+        <li class="">
+          <a class="block px-2 py-2 leading-14 text-[#5C5C5C]" href="{{ .link }}">
+            {{ .name }}
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>
+

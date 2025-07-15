@@ -1,0 +1,107 @@
+{{ define "main" }}
+  <div id="about" class="w-[1280px] max-w-full mx-auto px-4 flex flex-col lg:flex-row items-start gap-24 py-8 md:py-24">
+    <img src="/images/about.png" alt="About Susan Huang" class="hidden sm:block mx-auto w-[80%] max-w-[400px] lg:max-w-1/4 xl:max-w-[500px] xl:w-full">
+    <div class="w-full">
+      <div class="flex items-center justify-between flex-col sm:flex-row">
+        <h2 class="text-xl sm:text-3xl pb-8 sm:pb-0 font-serif">
+          <span class="block pb-4">設計與程式兼具的整合者</span>
+          <span class="pl-10 sm:pl-20 block">讓專案從規劃就少走彎路</span>
+        </h2>
+        <img src="/images/me.png" alt="Me" class="border-2 border-white rounded-full shadow-lg">
+      </div>
+      <h3 class="text-[#8E5749] text-xl py-8">資深前端工程師</h3>
+      <p class="text-[#5C5C5C] leading-8">
+        <strong>Hi，我是書珊（Susan）</strong>，一位同時具備<strong> UI/UX 設計</strong>思維與<strong>前端實作</strong>經驗的產品規劃者，擁有超過<strong>8 年網站與系統專案經歷</strong> ，橫跨設計與開發兩端，能靈活應對多元需求。
+        <br>
+        <br>
+        我的背景讓我在專案初期就能從使用者體驗與技術實作的角度，初步評估需求的可行性，並提出替代性的解決方向，協助團隊釐清目標、縮短溝通成本。從電商平台、企業內部工具，到政府系統，我都能快速掌握脈絡，調整策略與規劃流程。
+        <br>
+        <br>
+        我不只是切畫面、做視覺的設計師，也不只是套畫面、做互動的前端工程師，而是一個能理解不同角色思維，推進產品前進的跨域協作者。如果你正在尋找一位懂設計、會前端、能協調需求與實作落差的產品夥伴，我，Susan，很樂意與你聊聊合作的可能。
+      </p>
+    </div>
+  </div>
+  <div id="horizontal-scroll-wrapper" class="relative">
+    <div id="horizontal-scroll" class="sticky top-0 h-100vh overflow-hidden">
+      <div class="w-[1280px] max-w-full mx-auto px-4">
+        <h2 class="text-xl sm:text-3xl pb-8 sm:pb-0 font-serif md:pb-24">職涯歷程與成長</h2>
+        <div id="scroll-content" class="flex pb-8 md:pb-24 gap-4 flex-nowrap ease-in-out duration-300 w-max">
+          {{ range .Site.Data.experience.work }}
+          <div>
+            <div class="flex items-center gap-4">
+              <div class="text-xl flex-none text-[#5C5C5C]">{{ .date }}</div>
+              <div class="w-full h-[1px] bg-[#B9AC97]"></div>
+            </div>
+            <div class="px-4 md:px-8 w-[calc(100svw-24px)] md:w-[700px]">
+              <div class="bg-white rounded-lg p-8 mt-10">
+                <div class="flex flex-col md:flex-row md:items-center gap-8 mb-8">
+                  <div>
+                    <img src="{{.image}}" alt="logo" class="w-auto" >
+                  </div>
+                  <div>
+                    <h3 class="text-lg">{{ .job }}</h3>
+                    <p class="text-[#8E5749] text-sm">{{ .company }}</p>
+                  </div>
+                </div>
+                {{ range .content }}
+                <div class="mt-4">
+                  {{ .title }}
+                  <ul class="list-disc pl-4 text-[#5C5C5C] pt-2">
+                    {{ range .description }}
+                      <li>{{ . }}</li>
+                    {{ end }}
+                  </ul>
+                </div>
+                {{ end }}
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="w-[1280px] max-w-full mx-auto px-4">
+    <h2 class="text-xl sm:text-3xl pb-8 font-serif">我的技術棧</h2>
+    <div>
+      {{ range .Site.Data.techStack.list }}
+      <div class="mb-4">
+        <div class="text-[#8E5749]">{{.title}}</div>
+        <p class="text-[#5C5C5C] mt-2">
+          {{ range .items }}
+          <span class="inline-block mr-2 mb-2 px-3 py-1 bg-white/60 text-sm">{{.}}</span>
+          {{ end }}
+        </p>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <div id="projects" class="w-[1280px] max-w-full mx-auto px-4 pt-32">
+    <h2 class="text-xl sm:text-3xl pb-12 font-serif">特色專案介紹</h2>
+    {{ range .Site.Data.projects.list }}
+    <div class="flex gap-24 mb-20 items-start">
+      <img src="{{.image}}" >
+      <div>
+        <h3 class="text-xl sm:text-3xl pb-8 ">{{.title}}</h3>
+        <p class="text-[#5C5C5C]">{{.description}}</p>
+
+        <div class="text-[#B9A280] flex gap-4 my-8">
+          {{ range .tag }}
+          <span>＃{{.}}</span>
+          {{ end }}
+        </div>
+        <h4 class="text-xl pb-8 ">我的角色與貢獻</h4>
+        <ul class="text-[#5C5C5C] list-disc pl-4">
+          {{ range .works }}
+          <li class="mb-2">{{.}}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+{{ end }}
+{{ define "script" }}
+{{ $js := resources.Get "js/home.js" | resources.Minify }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ end }}

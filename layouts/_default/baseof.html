@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-N68JCKPPWJ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-N68JCKPPWJ');
+    </script> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Susan Huang - 前端工程師</title>
+    <meta
+      name="description"
+      content=""
+    />
+    <meta
+      property="og:title"
+      content="Susan Huang - 前端工程師"
+    />
+    <meta property="og:description" content="" />
+    <meta
+      property="og:type"
+      content="website"
+    />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Susan Huang - 前端工程師"
+    />
+    <meta name="twitter:description" content="" />
+    <meta
+      name="twitter:image"
+      content=""
+    />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    {{ partialCached "css.html" . }}
+  </head>
+  <body class="bg-[#EEEBE5] ">
+    {{ partial "header.html" . }}
+    <main class="pt-[73px]">{{ block "main" . }}{{ end }}</main>
+    {{ partial "footer.html" . }}
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 150,
+        disable: false,
+        duration: 600,
+        once: true,
+        easing: "ease-in-sine",
+      });
+    </script>
+    {{ block "script" . }}{{ end }}
+  </body>
+</html>
