@@ -1,5 +1,6 @@
 // 監聽頁面載入完成事件
 document.addEventListener('DOMContentLoaded', () => {
+
   const wrapper = document.getElementById('horizontal-scroll-wrapper');
   const stickySection = document.getElementById('horizontal-scroll');
   const content = document.getElementById('scroll-content');
@@ -20,6 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function handleScroll() {
+    if ( window.innerWidth < 768 ) {
+      // 如果視窗寬度小於 1280px，則不啟用橫向滾動效果
+      wrapper.style.height = 'auto';
+      content.style.transform = 'translateX(0)';
+      return;
+    }
     // 計算 Wrapper 區塊的起始位置
     const wrapperTop = wrapper.offsetTop;
     // 計算總共可以滾動的行程 (Wrapper 的高度減去一個視窗的高度)
@@ -46,6 +53,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- 初始化與事件綁定 ---
+
+  if ( window.innerWidth < 768 ) {
+    // 如果視窗寬度小於 1280px，則不啟用橫向滾動效果
+    wrapper.style.height = 'auto';
+    content.style.transform = 'translateX(0)';
+    return;
+  }
 
   // 首次載入時，設定 Wrapper 的高度
   setWrapperHeight();
